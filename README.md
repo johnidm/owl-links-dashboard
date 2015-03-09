@@ -1,6 +1,6 @@
 # owl-links-dashboard
 
-Dashboard utilizadao para acessar a API [Owl Links API](https://github.com/johnidm/owl-links-api) e manter a área adminitrativa do projeto [Owl Links](https://github.com/johnidm/owl-links).
+Dashboard utilizado para acessar a API [Owl Links API](https://github.com/johnidm/owl-links-api) e manter a área administrativa do projeto [Owl Links](https://github.com/johnidm/owl-links).
 
 ####Tecnologias utilizadas
 
