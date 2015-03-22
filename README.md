@@ -8,4 +8,8 @@ Esse projeto está sendo escrito em:
 - [Bootstrap ](http://getbootstrap.com/)
 - [jQuery](http://jquery.com/)
 - [Angular](https://angular.io/)
+- [Grunt](http://gruntjs.com/)
+- [Bower](http://bower.io/)
+- [Yeoman ](http://yeoman.io/)
+
 
