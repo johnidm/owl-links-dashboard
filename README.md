@@ -37,4 +37,4 @@ grunt serve
 Pronto, agora é codar.
 
 
-Nota: se o seguinte erro ocorrer `Waiting...Fatal error: watch ENOSPC` execute o comando `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p` para resolve-lo
+Nota: se o seguinte erro ocorrer `Waiting...Fatal error: watch ENOSPC` execute o comando `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p` para resolve-lo.
