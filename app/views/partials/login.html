@@ -3,19 +3,18 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="well login-box">
-                    <form action="">
+                    <form ng-submit="submit(email, senha)" ng-controller="LoginCtrl" novalidate>
                         <legend>Login</legend>
                         <div class="form-group">
                             <label for="username-email">E-mail</label>
-                            <input value='' id="username-email" placeholder="E-mail" type="text" class="form-control" />
+                            <input value='' id="username-email" placeholder="E-mail" type="text" class="form-control" ng-model="email" />
                         </div>
                         <div class="form-group">
                             <label for="password">Senha</label>
-                            <input id="password" placeholder="Senha" type="password" class="form-control" />
+                            <input id="password" placeholder="Senha" type="password" class="form-control" ng-model="senha" />
                         </div>
-                        <div class="form-group text-center">
-                            <button class="btn btn-danger btn-cancel-action"><i class="fa fa-times-circle"></i> Cancel</button>
-                            <button class="btn btn-success btn-login-submit" type="submit"><i class="fa fa-sign-in"></i> Login</button>
+                        <div class="form-group text-center">                            
+                            <button class="btn btn-success btn-login-submit btn-block" type="submit"><i class="fa fa-sign-in"></i> Login</button>
                         </div>
                     </form>
                 </div>
@@ -24,3 +23,4 @@
         </div>
     </div>
 </div>
+

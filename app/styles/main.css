@@ -17,8 +17,10 @@
 }
 
 .well.login-box {
+
     width:300px;
     margin: 0 auto;
+    margin-top: 80px;
     
 }
 .well.login-box legend {
@@ -41,3 +43,20 @@
   border-radius:0; 
 }
 
+
+.navbar-form input, .form-inline input {
+  width:auto;
+}
+
+
+
+header {
+  height:280px;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10;
+}
