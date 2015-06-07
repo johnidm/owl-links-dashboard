@@ -1,0 +1,39 @@
+<div ng-controller="ContactsCtrl" ng-init="loadContacts()">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fist Name</th>
+                <th>Last name</th>
+                <th>E-mail</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        
+        <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Fist Name</th>
+            <th>Last name</th>
+            <th>E-mail</th>
+            <th></th>
+        </tr>
+        </tfoot>
+        
+        <tbody>
+            <tr ng-repeat="contact in contacts" ng-hide="link.hide" >
+                <td>{{contact.id}}</td>
+                <td>{{contact.firstname}}</td>
+                <td>{{contact.lastname}}</td>
+                <td>{{contact.email}}</td>
+
+                <td class="text-center">
+                    <span data-placement="top" data-toggle="tooltip" title="Detalhes">
+
+                    <button ng-click="findById(contact.id)" class="btn btn-xs" data-title="Detalhes" data-toggle="modal" data-target="#find" ><span class="glyphicon glyphicon-th-list"></span></button></span>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>

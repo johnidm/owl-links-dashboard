@@ -24,6 +24,12 @@ angular.module("owlLinksDashboardApp", ['ui.router'])
 	        	url: '/newsletters',
 	            templateUrl: 'views/partials/newsletters.html'
 	        
+	        })
+
+	        .state('contacts', {
+	        	url: '/contacts',
+	            templateUrl: 'views/partials/contacts.html'
+	        
 	        });
     	
 	})
