@@ -43,15 +43,13 @@
   border-radius:0; 
 }
 
-
 .navbar-form input, .form-inline input {
   width:auto;
 }
 
-
-
 header {
   height:280px;
+  background-color: #8899AA; 
 }
 
 #nav.affix {
