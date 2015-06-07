@@ -35,7 +35,7 @@
                                 <li class="divider"></li>
 
                                 <li><a ui-sref="collectlinks">Collect Links</a></li>
-                                <li><a ui-sref="newslatters">Newslatters</a></li>
+                                <li><a ui-sref="newsletters">Newsletters</a></li>
                                 <li><a ui-sref="contacts">Contacts</a></li>
                                 <li><a ui-sref="links">Links</a></li>
                             </ul>
@@ -70,18 +70,21 @@
         ga('send', 'pageview');
         </script>
         <!-- build:js(.) scripts/vendor.js -->
-        <!-- bower:js -->
+
         <script src="vendor/jquery/dist/jquery.js"></script>
         <script src="vendor/angular/angular.js"></script>
-        <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
-        <!-- endbower -->
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+  
         <script src="scripts/services/collectlink.js"></script>
-        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/services/newsletter.js"></script>
+
         <script src="scripts/controllers/collectlink.js"></script>
+        <script src="scripts/controllers/newsletter.js"></script>
+  
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
     </body>
