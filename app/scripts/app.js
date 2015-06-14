@@ -33,7 +33,7 @@ angular.module("owlLinksDashboardApp", ['ui.router'])
         });
 
     })
-    .constant('API_URL', 'http://owl-links-api.herokuapp.com/')
+    .constant('API_URL', 'http://owl-links-api.herokuapp.com')
     .constant('APP_VERSION', '0.9.1')
     .factory('Helpers', function($http) {
         return {

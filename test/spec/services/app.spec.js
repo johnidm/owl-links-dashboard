@@ -20,7 +20,7 @@ describe('Modele: owlLinksDashboardApp', function() {
     });
 
     it('should return api url links', function() {
-        expect(API_URL).toBe('http://owl-links-api.herokuapp.com/');
+        expect(API_URL).toBe('http://owl-links-api.herokuapp.com');
     });
 
 

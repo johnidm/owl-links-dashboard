@@ -1,0 +1,46 @@
+[{
+    "id": "54fbb3f2332a350003000001",
+    "url": "http://fritzing.org",
+    "title": "Fritzing",
+    "description": "Fritzing é uma ferramenta open-source que permite ao usuário documentar seus protótipos de projetos eletrônicos. Indicada principalmente para projetos com Arduino.",
+    "tags": [
+        "Arduino",
+        "Protótipação",
+        "Hardware",
+        "Eletrônica"
+    ],
+    "notifynews": "S"
+}, {
+    "id": "54fbc107332a350003000002",
+    "url": "http://codepen.io/",
+    "title": "CodePen Editor",
+    "description": "CodePen é um editor de código HTML, CSS, JavaScript no navegador com previews instantâneos. Também oferece uma coleção de snippets para web.",
+    "tags": [
+        "CSS",
+        "HTML",
+        "JavaScript",
+        "Snippets",
+        "Editor OnLine"
+    ],
+    "notifynews": "S"
+}, {
+    "id": "54fdade5b23f700003000001",
+    "url": "http://www.pcduino.com/",
+    "title": "pcDuino",
+    "description": "pcDuino é uma plataforma de um mini-PC que roda Ubuntu e Android. Ele possui hardware compatível com Arduino.",
+    "tags": [
+        "Hardware",
+        "mini PC"
+    ],
+    "notifynews": "S"
+}, {
+    "id": "54fe38a6b2d6440003000001",
+    "url": "http://www.windows93.net/",
+    "title": "WINDOWS93",
+    "description": "Trata-se de um sistema operacional imaginário baseado na união do Windows 3.11 e Windows 95. O projeto foi desenvolvido por dois franceses, roda direto browser é utiliza HTML5 e bibliotecas Java Script.",
+    "tags": [
+        "SO",
+        "Gamificação"
+    ],
+    "notifynews": "S"
+}]

@@ -7,8 +7,7 @@
     "font-awesome": "^4.3.0",
     "angular-resource": "^1.4.0",
     "angular-ui-router": "~0.2.15",
-    "string-format-js": "^0.1.2",
-    "format": "~1.0.1"
+    "string-formatter": "~0.0.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

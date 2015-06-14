@@ -3,6 +3,7 @@
 // Generated on 2015-03-25 using
 // generator-karma 0.9.0
 
+
 module.exports = function(config) {
     'use strict';
 
@@ -14,7 +15,7 @@ module.exports = function(config) {
         basePath: '../',
 
         // testing framework to use (jasmine/mocha/qunit/...)
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'fixture'],
 
         // list of files / patterns to load in the browser
         files: [
@@ -24,17 +25,17 @@ module.exports = function(config) {
             'app/vendor/bootstrap/dist/js/bootstrap.js',
             'app/vendor/angular-resource/angular-resource.js',
             'app/vendor/angular-ui-router/release/angular-ui-router.js',
-            'app/vendor/string-format-js/format.js',
-            'app/vendor/format/format.js',
+            'app/vendor/string-formatter/string-formatter.js',
             'app/vendor/angular-mocks/angular-mocks.js',
             // endbower
             'app/scripts/*.js',
             'app/scripts/**/*.js',
-
-            'test/mock/**/*.js',
             'test/spec/**/*.js',
-            
-            'test/util/*.js'
+
+            {
+                pattern: 'test/spec/fixtures/*.json',
+            }
+
         ],
 
         // list of files / patterns to exclude
@@ -58,8 +59,20 @@ module.exports = function(config) {
         // Which plugins to enable
         plugins: [
             'karma-phantomjs-launcher',
-            'karma-jasmine'
+            'karma-jasmine',
+            'karma-fixture',
+            'karma-html2js-preprocessor',
+            'karma-json-fixtures-preprocessor',
         ],
+
+        preprocessors: {
+            '**/*.html': ['html2js'],
+            '**/*.json': ['json_fixtures']
+        },
+
+        jsonFixturesPreprocessor: {
+            variableName: '__json__'
+        },
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
@@ -77,5 +90,8 @@ module.exports = function(config) {
         // },
         // URL root prevent conflicts with the site root
         // urlRoot: '_karma_'
+
     });
+
+    
 };
