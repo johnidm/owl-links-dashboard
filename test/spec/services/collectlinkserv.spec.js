@@ -1,24 +1,20 @@
 'use strict';
 
-describe('Service: CollectLinkServ', function() {
+describe('Service: CollectLinkService', function() {
 
-    var CollectLinkServ;
+    var CollectLinksService;
     var API_URL;
     var endPoints;
 
     var $httpBackend;
-    var $rootScope;
-
 
     beforeEach(module('owlLinksDashboardApp'));
 
-    beforeEach(inject(function(_CollectLinkServ_, _API_URL_, _$httpBackend_, _$rootScope_) {
+    beforeEach(inject(function(_CollectLinksService_, _API_URL_, _$httpBackend_, _$rootScope_) {
 
-        CollectLinkServ = _CollectLinkServ_;
+        CollectLinksService = _CollectLinksService_;
         API_URL = _API_URL_;
         $httpBackend = _$httpBackend_;
-
-        $rootScope = _$rootScope_;
 
         endPoints = {
             getAllLinks: 'collectlinks',
@@ -28,59 +24,59 @@ describe('Service: CollectLinkServ', function() {
         fixture.setBase('test/spec/fixtures');
     }));
 
-    it('should instance CollectLinkServ', function() {
-        expect(!!CollectLinkServ).toBe(true);
+    it('should instance CollectLinkService', function() {
+        expect(!!CollectLinksService).toBe(true);
     });
 
-    it('should get all links', function() {
+    it('should get all collectlinks', function() {
 
         var url = '{0}/{1}'.format(API_URL, endPoints.getAllLinks);
-        var mockLinks = fixture.load('links.json');
+        var mockCollectLinks = fixture.load('collectlinks.json');
 
-        $httpBackend.whenGET(url).respond(mockLinks);
+        $httpBackend.whenGET(url).respond(mockCollectLinks);
 
-        var promise = CollectLinkServ.getAllLinks(),
-            links;
+        var promise = CollectLinksService.getAllLinks(),
+            collectlinks;
 
         expect(promise).toBeDefined();
 
-        promise.then(function(__links__) {
-            links = __links__.data;
+        promise.then(function(__collectlinks__) {
+            collectlinks = __collectlinks__.data;
         });
 
         $httpBackend.flush();
 
-        expect(links instanceof Array).toBeTruthy();
-        expect(links.length).toBe(4);
-        expect(links).toEqual(mockLinks);
+        expect(collectlinks instanceof Array).toBeTruthy();
+        expect(collectlinks.length).toBe(3);
+        expect(collectlinks).toEqual(mockCollectLinks);
 
-        var link = links[0];
-        expect(link.id).toBe('54fbb3f2332a350003000001');
-        expect(link.url).toBe('http://fritzing.org');
+        var collectlink = collectlinks[0];
+        expect(collectlink.id).toBe(214);
+        expect(collectlink.link).toBe('http://www.bootsnipp.com');
     });
 
-    it('should delete link', function() {
+    it('should delete collectlink', function() {
 
-        var mockLinks = fixture.load('links.json');
-        var mockLink = mockLinks[0];
+        var mockCollectLinks = fixture.load('links.json');
+        var mockCollectLink = mockCollectLinks[0];
 
-        var countLinks = mockLinks.length;
+        var countCollectLinks = mockCollectLinks.length;
 
-        var url = '{0}/{1}/{2}'.format(API_URL, endPoints.delete, mockLink.id);
+        var url = '{0}/{1}/{2}'.format(API_URL, endPoints.delete, mockCollectLink.id);
 
         $httpBackend.whenGET(url).respond(200);
 
-        var promise = CollectLinkServ.delete(mockLink.id);
+        var promise = CollectLinksService.delete(mockCollectLink.id);
 
         promise.then(function() {
-            countLinks--;
+            countCollectLinks--;
         });
 
         expect(promise).toBeDefined();
 
         $httpBackend.flush;
 
-        expect(countLinks).toEqual(4);
+        expect(countCollectLinks).toEqual(4);
 
     });
 
