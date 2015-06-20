@@ -1,0 +1,30 @@
+[
+    {
+        "id": 141,
+        "name": "Fulano",
+        "email": "fulano@gmail.com",
+        "subscribe": "S",
+        "signedup": "2015-03-20 11:03:51.707"
+    },
+    {
+        "id": 142,
+        "name": "Ciclano",
+        "email": "ciclano@gmail.com",
+        "subscribe": "N",
+        "signedup": "2015-03-20 11:15:35.823"
+    },
+    {
+        "id": 181,
+        "name": "Beltrano",
+        "email": "beltrano@gmail.com",
+        "subscribe": "S",
+        "signedup": "2015-03-23 01:46:44.618"
+    },
+    {
+        "id": 214,
+        "name": "Trajano",
+        "email": "trajano@gmail.com",
+        "subscribe": "N",
+        "signedup": "2015-03-26 00:27:28.629"
+    }
+]

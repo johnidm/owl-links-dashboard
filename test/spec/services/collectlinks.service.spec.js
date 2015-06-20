@@ -10,7 +10,7 @@ describe('Service: CollectLinkService', function() {
 
     beforeEach(module('owlLinksDashboardApp'));
 
-    beforeEach(inject(function(_CollectLinksService_, _API_URL_, _$httpBackend_, _$rootScope_) {
+    beforeEach(inject(function(_CollectLinksService_, _API_URL_, _$httpBackend_) {
 
         CollectLinksService = _CollectLinksService_;
         API_URL = _API_URL_;

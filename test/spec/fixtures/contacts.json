@@ -1,0 +1,14 @@
+[
+    {
+        "id": 21,
+        "firstname": "Fulano",
+        "lastname": "De Tal",
+        "email": "fulano@gmail.com"
+    },
+    {
+        "id": 54,
+        "firstname": "Ciclano",
+        "lastname": "De Tal",
+        "email": "ciclano@gmail.com"
+    }
+]
