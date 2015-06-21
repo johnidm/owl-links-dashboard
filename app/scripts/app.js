@@ -8,29 +8,25 @@ angular.module("owlLinksDashboardApp", ['ui.router'])
         $urlRouterProvider.otherwise('/home');
 
         $stateProvider
-
             .state('home', {
-            url: '/home',
-            templateUrl: 'views/partials/home.html'
-        })
-
-        .state('collectlinks', {
-            url: '/collectlinks',
-            templateUrl: 'views/partials/collectlinks.html'
-
-        })
-
-        .state('newsletters', {
-            url: '/newsletters',
-            templateUrl: 'views/partials/newsletters.html'
-
-        })
-
-        .state('contacts', {
-            url: '/contacts',
-            templateUrl: 'views/partials/contacts.html'
-
-        });
+                url: '/home',
+                templateUrl: 'views/partials/home.html'
+            }).state('collectlinks', {
+                url: '/collectlinks',
+                templateUrl: 'views/partials/collectlinks.html'
+            }).state('newsletters', {
+                url: '/newsletters',
+                templateUrl: 'views/partials/newsletters.html'
+            }).state('contacts', {
+                url: '/contacts',
+                templateUrl: 'views/partials/contacts.html'
+            }).state('links', {
+                url: '/links',
+                templateUrl: 'views/partials/links.html'
+            }).state('insert-link', {
+                url: '/insert-link',
+                templateUrl: 'views/partials/insert-link.html'
+            });
 
     })
     .constant('API_URL', 'http://owl-links-api.herokuapp.com')
@@ -45,9 +41,9 @@ angular.module("owlLinksDashboardApp", ['ui.router'])
                 console.log(file);
 
                 var __file__ = 'file:///home/johni/Projetos/owl-links-dashboard/test/files/' + file;
-                
+
                 console.log(__file__);
-          
+
                 return "not implemented";
             }
         }

@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('owlLinksDashboardApp')
-    .controller('NewslettersCtrl', ['$scope', 'NewsletterServ', 
-        function ($scope, NewsletterServ) {
+    .controller('NewslettersController', ['$scope', 'NewslettersService', 
+        function ($scope, NewslettersService) {
 
     $scope.newsletters = null;
     
-    $scope.loadNewsletters = function(){
+    $scope.loadAll = function(){
         console.log('Carregando os assinantes da newsletter...');
 
-        NewsletterServ.getAllNewsletters()
+        NewslettersService.getAll()
             .success(function (newsletters) {
                 console.log('Newsletter carregadadas com sucesso.');  
                 $scope.newsletters = newsletters;
@@ -23,7 +23,7 @@ angular.module('owlLinksDashboardApp')
     $scope.deleteNewsletter = function (newsletter) {
         console.log('Excluindo newsletters ' + newsletter.id);
 
-        NewsletterServ.delete(newsletter.id)
+        NewslettersService.delete(newsletter.id)
             .success(function () {
                 console.log('Newsletter excluída com sucesso.');
                 newsletter.hide = true;                

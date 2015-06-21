@@ -9,8 +9,6 @@ describe('Service: NewslettersService', function() {
 
     var $httpBackend;
 
-
-
     beforeEach(module('owlLinksDashboardApp'));
 
 

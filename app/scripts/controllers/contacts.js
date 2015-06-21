@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('owlLinksDashboardApp')
-    .controller('ContactsCtrl', ['$scope', 'ContactsServ', 
-        function ($scope, ContactsServ) {
+    .controller('ContactsCtrl', ['$scope', 'ContactsService', 
+        function ($scope, ContactsService) {
 
     $scope.contacts = null;
     
     $scope.loadContacts = function(){
         console.log('Carregando todos os contatos...');
 
-        ContactsServ.getAllContacts()
+        ContactsService.getAll()
             .success(function (contacts) {
                 console.log('Contatos carregadadas com sucesso.');  
                 $scope.contacts = contacts;
@@ -23,7 +23,7 @@ angular.module('owlLinksDashboardApp')
     $scope.findById = function (id) {
         console.log('Pesquisando contato ' + id);
 
-        ContactsServ.getById(id)
+        ContactsService.getById(id)
             .success(function (contact) {
                 console.log('Contato econtrado.');
                 console.log(contact);

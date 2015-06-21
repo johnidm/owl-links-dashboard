@@ -3,7 +3,7 @@
 angular.module('owlLinksDashboardApp')
     .service('LinksService', ['$http', 'API_URL', function ($http, API_URL) {
               
-        this.getAllLinks = function () {
+        this.getAll = function () {
             return $http.get('{0}/{1}'.format(API_URL, 'links'));
         };
 
@@ -12,11 +12,18 @@ angular.module('owlLinksDashboardApp')
         } 
      
         this.delete = function (id) {
-            return $http.delete('{0}/{1}/{2}'.format(API_URL, 'link', id ));
+            var url = '{0}/{1}/{2}'.format(API_URL, 'link', id )
+            return $http.delete(url);
         };
 
-        this.update = function(link) {
-            
+        this.update = function(link) {  
+            var url = '{0}/{1}/{2}'.format(API_URL, 'link', link.id )
+            return $http.put(url, link);
+        }
+
+        this.insert = function(link) {            
+            var url = '{0}/{1}'.format(API_URL, 'link');
+            return $http.post(url, link);
         }
        
 }]);
