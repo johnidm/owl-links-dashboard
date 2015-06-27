@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("owlLinksDashboardApp", ['ui.router'])
+angular.module("owlLinksDashboardApp", ['ui.router', 'toastr'])
     .config(function($httpProvider, $stateProvider, $urlRouterProvider) {
 
         $httpProvider.defaults.headers.common['api-key'] = '4B5B8A4948F8AA4FF918A353B5CAE';
@@ -59,13 +59,7 @@ angular.module("owlLinksDashboardApp", ['ui.router'])
                 return (typeof str !== "string");
             },
 
-            readJsonFile: function(file) {
-                console.log(file);
-
-                var __file__ = 'file:///home/johni/Projetos/owl-links-dashboard/test/files/' + file;
-
-                console.log(__file__);
-
+            readJsonFile: function(file) {              
                 return "not implemented";
             }
         }

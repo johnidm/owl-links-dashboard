@@ -1,37 +1,40 @@
 'use strict';
 
 angular.module('owlLinksDashboardApp')
-    .controller('CollectLinkCtrl', ['$scope', 'CollectLinksService', 
-        function ($scope, CollectLinksService) {
+    .controller('CollectLinkCtrl', ['$scope', 'CollectLinksService', 'toastr',
+        function($scope, CollectLinksService, toastr) {
 
-    $scope.links = null;
-    
-    $scope.loadLinks = function(){
-        console.log('Carregando todas as sugestoes de links...');
+            $scope.links = null;
 
-        CollectLinksService.getAllLinks()
-            .success(function (links) {
-                console.log('Links carregadados com sucesso.');                
-                $scope.links = links;
+            $scope.loadLinks = function() {
 
-            })
-            .error(function (error) {
-                console.log('Falha ao carregar os links ' + error.message);                
-            });       
-        
-    }
+                console.log('Carregando coleção de links...');
 
-    $scope.deleteLink = function (link) {
-        console.log('Excluindo link ' + link.id);
+                CollectLinksService.getAllLinks()
+                    .success(function(links) {
+                        $scope.links = links;
+                        console.log('Links carregados com sucesso');
+                    })
+                    .error(function(error) {
+                        toastr.error('Falha ao carregar os links');
+                        console.error(error);
+                    });
 
-        CollectLinksService.delete(link.id)
-            .success(function () {
-                console.log('Link excluído com sucesso.');
-                link.hide = true;                
-            })
-            .error(function (error) {
-                console.log('Falha ao excluir link ' + error);            
-            });                 
-    }
+            }
 
-}]);
+            $scope.deleteLink = function(link) {
+                console.log('Excluindo link ' + link.id);
+
+                CollectLinksService.delete(link.id)
+                    .success(function() {
+                        toastr.success('Link excluído com sucesso');
+                        link.hide = true;
+                    })
+                    .error(function(error) {
+                        toastr.error('Falha ao excluir link');
+                        console.error(error);
+                    });
+            }
+
+        }
+    ]);

@@ -5,7 +5,7 @@ angular.module('owlLinksDashboardApp')
         return {
             restrict: 'E',
             replace: true,
-            template: '<div class="loading"><img src="http://www.nasa.gov/multimedia/videogallery/ajax-loader.gif" width="20" height="20" />LOADING...</div>',
+            template: '<div class="loading">LOADING...</div>',
 
             link: function(scope, elm, attrs) {
 

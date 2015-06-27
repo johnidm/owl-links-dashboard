@@ -6,7 +6,7 @@
                     <label for="title">Título:</label>
                     <div class="input-group">
                         <span class="input-group-addon no-border-radius"><i class="fa fa-file-text"></i></span>
-                        <input type="text" name="title" class="form-control no-border-radius" placeholder="Informe o título do link">
+                        <input ng-model="link.title" type="text" name="title" class="form-control no-border-radius" placeholder="Informe o título do link">
                     </div>
                     <p class="text-info">
                         <i class="fa fa-info-circle"></i> Você pode informar o conteúdo da tag title do html
@@ -16,7 +16,7 @@
                     <label for="link">Link:</label>
                     <div class="input-group">
                         <span class="input-group-addon no-border-radius">http://</span>
-                        <input type="text" name="link" class="form-control no-border-radius" placeholder="Informe o link">
+                        <input ng-model="link.url" type="text" name="link" class="form-control no-border-radius" placeholder="Informe o link">
                     </div>
                     <p class="text-info">
                         <i class="fa fa-info-circle"></i> Exemplo: www.google.com.br ou google.com.br
@@ -30,7 +30,7 @@
                     <label for="tags">Tags:</label>
                     <div class="input-group">
                         <span class="input-group-addon no-border-radius"><i class="fa fa-tags"></i></i></span>
-                        <input tagsimput type="text" name="tags" class="form-control no-border-radius" data-role="tagsinput">
+                        <input ng-model="link.tags" tagsimput type="text" name="tags" class="form-control no-border-radius" data-role="tagsinput">
                     </div>
                     <p class="text-info">
                         <i class="fa fa-info-circle"></i> Informe tags que auxiliam a pesquisa
@@ -44,7 +44,7 @@
                     <label for="description">Descrição:</label>
                     <div class="input-group">
                         <span class="input-group-addon no-border-radius"><i class="fa fa-align-justify"></i></span>
-                        <textarea name="description" class="form-control no-border-radius" rows="5"></textarea>
+                        <textarea ng-model="link.description" name="description" class="form-control no-border-radius" rows="5"></textarea>
                     </div>
                 </div>
             </div>

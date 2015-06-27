@@ -1,36 +1,54 @@
 'use strict';
 
 angular.module('owlLinksDashboardApp')
-    .controller('ContactsCtrl', ['$scope', 'ContactsService', 
-        function ($scope, ContactsService) {
+    .controller('ContactsCtrl', ['$scope', 'ContactsService', 'toastr',
+        function($scope, ContactsService, toastr) {
 
-    $scope.contacts = null;
-    
-    $scope.loadContacts = function(){
-        console.log('Carregando todos os contatos...');
+            $scope.contacts = null;
+            $scope.contact = null;
 
-        ContactsService.getAll()
-            .success(function (contacts) {
-                console.log('Contatos carregadadas com sucesso.');  
-                $scope.contacts = contacts;
+            $scope.loadContacts = function() {
+                console.log('Carregando contatos...');
 
-            })
-            .error(function (error) {
-                console.log('Falha ao carregar os contatos ' + error.message);                
-            }); 
-    }
+                ContactsService.getAll()
+                    .success(function(contacts) {
+                        $scope.contacts = contacts;
+                        console.log('Contatos carregadadas com sucesso.');
 
-    $scope.findById = function (id) {
-        console.log('Pesquisando contato ' + id);
+                    })
+                    .error(function(error) {
+                        toastr.error('Falha ao carregar os contantos')
+                        console.error(error);
+                    });
+            }
 
-        ContactsService.getById(id)
-            .success(function (contact) {
-                console.log('Contato econtrado.');
-                console.log(contact);
-            })
-            .error(function (error) {
-                console.log('Falha ao pesquisar o contato ' + error);            
-            });                 
-    }
+            $scope.findById = function(id) {
+                console.log('Pesquisando contato ' + id);
 
-}]);
+                ContactsService.getById(id)
+                    .success(function(contact) {
+                        $scope.contact = contact;
+                        console.log('Contato encontrado {0}'.format(contact.id));
+                    })
+                    .error(function(error) {
+                        toastr.error('Falha ao pesquisar contanto');
+                        console.error(error);
+                    });
+            }
+
+            $scope.delete = function(contact) {
+                console.log('Excluindo contanto ' + contact.id);
+
+                ContactsService.delete(contact.id)
+                    .success(function() {
+                        toastr.success('Contanto excluído com sucesso');
+                        contact.hide = true;
+                    })
+                    .error(function(error) {
+                        toastr.error('Falha ao excluir contanto');
+                        console.error(error);
+                    });
+            }
+
+        }
+    ]);

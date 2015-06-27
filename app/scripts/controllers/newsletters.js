@@ -1,36 +1,38 @@
 'use strict';
 
 angular.module('owlLinksDashboardApp')
-    .controller('NewslettersController', ['$scope', 'NewslettersService', 
-        function ($scope, NewslettersService) {
+    .controller('NewslettersController', ['$scope', 'NewslettersService', 'toastr',
+        function($scope, NewslettersService, toastr) {
 
-    $scope.newsletters = null;
-    
-    $scope.loadAll = function(){
-        console.log('Carregando os assinantes da newsletter...');
+            $scope.newsletters = null;
 
-        NewslettersService.getAll()
-            .success(function (newsletters) {
-                console.log('Newsletter carregadadas com sucesso.');  
-                $scope.newsletters = newsletters;
+            $scope.loadAll = function() {
+                console.log('Carregando newsletters...');
 
-            })
-            .error(function (error) {
-                console.log('Falha ao carregar as newsletters ' + error.message);                
-            }); 
-    }
+                NewslettersService.getAll()
+                    .success(function(newsletters) {
+                        $scope.newsletters = newsletters;
+                        console.log('Newsletter carregadadas com sucesso');
+                    })
+                    .error(function(error) {
+                        toastr.error('Falha ao carregar a newsletter');
+                        console.error(error);
+                    });
+            }
 
-    $scope.deleteNewsletter = function (newsletter) {
-        console.log('Excluindo newsletters ' + newsletter.id);
+            $scope.delete = function(newsletter) {
+                console.log('Excluindo newsletter ' + newsletter.id);
 
-        NewslettersService.delete(newsletter.id)
-            .success(function () {
-                console.log('Newsletter excluída com sucesso.');
-                newsletter.hide = true;                
-            })
-            .error(function (error) {
-                console.log('Falha ao excluir a newsletters ' + error);            
-            });                 
-    }
+                NewslettersService.delete(newsletter.id)
+                    .success(function() {
+                        toastr.success('Newsletter excluída com sucesso.');
+                        newsletter.hide = true;
+                    })
+                    .error(function(error) {
+                        toastr.error('Falha ao excluir a newsletter');
+                        console.error(error);
+                    });
+            }
 
-}]);
+        }
+    ]);
