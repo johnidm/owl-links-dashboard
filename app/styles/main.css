@@ -47,14 +47,24 @@
   width:auto;
 }
 
-header {
-  height:280px;
-  background-color: #8899AA; 
-}
 
 #nav.affix {
     position: fixed;
     top: 0;
     width: 100%;
     z-index:10;
+}
+
+.no-border-radius {
+  border-radius: 0px;
+}
+
+/*  
+  Custon style Bootstrap Tags Input
+  http://timschlechter.github.io/bootstrap-tagsinput/examples/
+*/
+.bootstrap-tagsinput { 
+  width: 100%; 
+  border-radius: 0px;
+  margin-bottom: 0px; 
 }

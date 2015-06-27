@@ -4,6 +4,8 @@ angular.module('owlLinksDashboardApp')
     .controller('LinksController', ['$scope', 'LinksService',
         function($scope, LinksService) {
 
+            // $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
+
             $scope.links = null;
             $scope.link = null;
 
@@ -24,22 +26,22 @@ angular.module('owlLinksDashboardApp')
 
             $scope.findById = function(id) {
                 return LinksService.getById(id)
-                    .success(function(link){
+                    .success(function(link) {
                         console.log('Consultando link');
-                        $scope.link = link;                        
+                        $scope.link = link;
                     })
-                    .error(function(error){
-                        
+                    .error(function(error) {
+
                     });
             }
 
             $scope.delete = function(link) {
 
                 LinksService.delete(link.id)
-                    .success(function(){
+                    .success(function() {
 
                     })
-                    .error(function(error){
+                    .error(function(error) {
 
                     });
             }
@@ -48,15 +50,12 @@ angular.module('owlLinksDashboardApp')
 
                 console.log('Salvando link...');
 
-                link.tags = link.tags.split(',');               
+                link.tags = link.tags.split(',');
                 if (link.id === undefined) {
                     LinksService.insert(link);
-                }
-                else {
+                } else {
                     LinksService.update(link);
                 }
             }
         }
     ]);
-
-

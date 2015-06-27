@@ -10,22 +10,44 @@ angular.module("owlLinksDashboardApp", ['ui.router'])
         $stateProvider
             .state('home', {
                 url: '/home',
-                templateUrl: 'views/partials/home.html'
+                templateUrl: 'views/partials/home.html',
+                
+                data: {
+                    title: 'Bem vindo'
+                } 
+
             }).state('collectlinks', {
                 url: '/collectlinks',
-                templateUrl: 'views/partials/collectlinks.html'
+                templateUrl: 'views/partials/collectlinks.html',
+                data: {
+                    title: 'Coleção de Links'
+                }
+
             }).state('newsletters', {
                 url: '/newsletters',
-                templateUrl: 'views/partials/newsletters.html'
+                templateUrl: 'views/partials/newsletters.html',
+
+                data: {
+                    title: 'Newsletters'
+                }
             }).state('contacts', {
                 url: '/contacts',
-                templateUrl: 'views/partials/contacts.html'
+                templateUrl: 'views/partials/contacts.html',
+                data: {
+                    title: 'Contatos'
+                }
             }).state('links', {
                 url: '/links',
-                templateUrl: 'views/partials/links.html'
+                templateUrl: 'views/partials/links.html',
+                data: {
+                    title: 'Links'
+                }
             }).state('insert-link', {
                 url: '/insert-link',
-                templateUrl: 'views/partials/insert-link.html'
+                templateUrl: 'views/partials/insert-link.html',
+                data: {
+                    title: 'Inserir Link'
+                }
             });
 
     })
@@ -48,6 +70,7 @@ angular.module("owlLinksDashboardApp", ['ui.router'])
             }
         }
     })
-    .run(function($rootScope, Helpers) {
+    .run(function($rootScope, $state, Helpers) {
         $rootScope.helpers = Helpers;
+        $rootScope.$state = $state;
     });

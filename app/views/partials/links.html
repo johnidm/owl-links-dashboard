@@ -1,4 +1,4 @@
-<a class="btn btn-primary" ui-sref="insert-link">Inserir novo link</a>
+<a class="btn btn-primary no-border-radius" ui-sref="insert-link">Inserir novo link</a>
 
 <div ng-controller="LinksController" ng-init="loadAll()">
     <table class="table table-hover">
@@ -24,7 +24,7 @@
                 <td>{{link.title}}</td>
                 <td>{{link.notifynews}}</td>
                 <td class="text-center">
-                    <span data-placement="top" data-toggle="tooltip" title="Delete"><button ng-click="delete(newsletter)" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button>
+                    <span data-placement="top" data-toggle="tooltip" title="Delete"><button ng-click="delete(link)" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button>
                     </span>
                 </td>
             </tr>
