@@ -9,8 +9,13 @@
     <!-- build:css(.) styles/vendor.css -->
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" />
-    <link rel="stylesheet" href="vendor/angular-toastr/dist/angular-toastr.css"></script>
+    <link rel="stylesheet" href="vendor/angular-toastr/dist/angular-toastr.css">
+    </script>
+    <link rel="stylesheet" href="vendor/ngprogress/ngProgress.css">
+    </script>
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="vendor/material-design-color-palette/css/material-design-color-palette.css" />
+    <link rel="stylesheet" href="vendor/Buttons/css/buttons.css" />
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
@@ -22,21 +27,19 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <loading></loading>
-    
-    <header>
-        <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+    <header class="mdc-bg-cyan-600">
+        <div id="top-nav" class="navbar navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-toggle"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Aplication</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-                                <i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+                            <a class="dropdown-toggle text-white" role="button" data-toggle="dropdown" href="#">
+                                <i class="glyphicon glyphicon-user "></i> Admin <span class="caret"></span></a>
                             <ul id="g-account-menu" class="dropdown-menu" role="menu">
                                 <li><a href="#">My Profile</a></li>
                                 <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
@@ -47,32 +50,46 @@
             </div>
         </div>
     </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <hr>
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a ui-sref="home"><i class="glyphicon glyphicon-flash"></i> Home</a></li>
-                    <li><a ui-sref="collectlinks"><i class="glyphicon glyphicon-list-alt"></i> Coleção de Links</a></li>
-                    <li><a ui-sref="newsletters"><i class="glyphicon glyphicon-book"></i> Newsletters</a></li>
-                    <li><a ui-sref="contacts"><i class="glyphicon glyphicon-briefcase"></i> Contatos</a></li>
-                    <li><a ui-sref="links"><i class="glyphicon glyphicon-time"></i> Links</a></li>
-                </ul>
-                <hr>
-            </div>
-            <div class="col-md-9">
-                <hr>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4>{{$state.current.data.title}}</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div ui-view></div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <hr>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a ui-sref="home"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-home fa-1x"></i> Home</h4></a></li>
+                        <li><a ui-sref="collectlinks"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-tasks fa-1x"></i> Coleção de Links</h4></a></li>
+                        <li><a ui-sref="newsletters"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-envelope"></i> Newsletters</h4></a></li>
+                        <li><a ui-sref="contacts"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-users"></i> Contatos</h4></a></li>
+                        <li><a ui-sref="links"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-list"></i> Links</h4></a></li>
+                    </ul>
+                    <hr>
+                </div>
+                <div class="col-md-9">
+                    <hr>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="mdc-text-blue-grey-900">{{$state.current.data.title}}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div ui-view></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <footer class="footer-basic-centered">
+        <p class="footer-company-motto">The company motto.</p>
+        <p class="footer-links">
+            <a href="#">Home</a> ·
+            <a href="#">Blog</a> ·
+            <a href="#">Pricing</a> ·
+            <a href="#">About</a> ·
+            <a href="#">Faq</a> ·
+            <a href="#">Contact</a>
+        </p>
+        <p class="footer-company-name">Company Name © 2015</p>
+    </footer>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
     ! function(A, n, g, u, l, a, r) {
@@ -91,8 +108,9 @@
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="vendor/angular-toastr/dist/angular-toastr.tpls.js"></script>
-
+    <script src="vendor/ngprogress/build/ngProgress.js"></script>
     <script src="vendor/string-formatter/string-formatter.js"></script>
+    <script src="vendor/Buttons/js/buttons.js"></script>
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>

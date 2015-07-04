@@ -1,11 +1,10 @@
 'use strict';
 
 angular.module('owlLinksDashboardApp')
-    .directive('loading', function( $http) {
+    .directive('loading', function( $http, ngProgress) {
         return {
             restrict: 'E',
             replace: true,
-            template: '<div class="loading">LOADING...</div>',
 
             link: function(scope, elm, attrs) {
 
@@ -16,9 +15,11 @@ angular.module('owlLinksDashboardApp')
                 scope.$watch(scope.isLoading, function(v) {
 
                     if (v) {
-                        elm.show();
+                        ngProgress.color('#C62828');
+                        ngProgress.height('3px');
+                        ngProgress.start();
                     } else {
-                        elm.hide();
+                        ngProgress.complete();
                     }
                     
                 });

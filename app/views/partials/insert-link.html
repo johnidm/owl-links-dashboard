@@ -1,4 +1,4 @@
-<div ng-controller="LinksController">
+<div ng-controller="LinksController" ng-init="loadTags()">
     <form role="form">
         <div class="form-group">
             <div class="row">
@@ -26,6 +26,17 @@
         </div>
         <div class="form-group">
             <div class="row">
+                <div class="col-xs-12">
+                    <label for="description">Descrição:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon no-border-radius"><i class="fa fa-align-justify"></i></span>
+                        <textarea ng-model="link.description" name="description" class="form-control no-border-radius" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
                 <div class="col-xs-12 bs-example">
                     <label for="tags">Tags:</label>
                     <div class="input-group">
@@ -38,23 +49,30 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-xs-12">
-                    <label for="description">Descrição:</label>
-                    <div class="input-group">
-                        <span class="input-group-addon no-border-radius"><i class="fa fa-align-justify"></i></span>
-                        <textarea ng-model="link.description" name="description" class="form-control no-border-radius" rows="5"></textarea>
-                    </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Sugestão de tags</div>
+            <div class="panel-body">
+                <div>
+                    <h4><span class="label label-{{$root.helpers.label_color($index)}} label-spaced" ng-repeat="tag in tags | orderBy : '+'">{{tag}}
+                    </span>
+
+                    </h4>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="row">
-                <div class="col-xs-12">
-                    <button ng-click="save(link)" type="submit" class="btn btn-success btn-lg pull-right no-border-radius">
+                <div class="col-xs-6">
+                    <a ui-sref="links" class="button button-block button-highlight button-large">
+                        <i class="fa fa-arrow-left"></i> Links
+                    </a>
+                </div>
+                <div class="col-xs-6">
+
+                    <a ng-click="save(link)" type="submit" class="button button-block button-primary button-large">
                         <i class="fa fa-check"></i> Gravar
-                    </button>
+                    </a>
+
                 </div>
             </div>
         </div>

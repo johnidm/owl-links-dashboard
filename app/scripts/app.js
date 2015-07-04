@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("owlLinksDashboardApp", ['ui.router', 'toastr'])
+angular.module("owlLinksDashboardApp", ['ui.router', 'toastr', 'ngProgress'])
     .config(function($httpProvider, $stateProvider, $urlRouterProvider) {
 
         $httpProvider.defaults.headers.common['api-key'] = '4B5B8A4948F8AA4FF918A353B5CAE';
@@ -11,10 +11,10 @@ angular.module("owlLinksDashboardApp", ['ui.router', 'toastr'])
             .state('home', {
                 url: '/home',
                 templateUrl: 'views/partials/home.html',
-                
+
                 data: {
                     title: 'Bem vindo'
-                } 
+                }
 
             }).state('collectlinks', {
                 url: '/collectlinks',
@@ -59,8 +59,10 @@ angular.module("owlLinksDashboardApp", ['ui.router', 'toastr'])
                 return (typeof str !== "string");
             },
 
-            readJsonFile: function(file) {              
-                return "not implemented";
+            label_color: function(index) {
+                var colors = ["primary", "success", "info", "warning", "danger"];
+
+                return colors[index % 5];
             }
         }
     })

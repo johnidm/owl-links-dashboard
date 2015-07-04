@@ -10,7 +10,10 @@
     "string-formatter": "~0.0.2",
     "angular-toastr": "~1.4.1",
     "bootstrap-tagsinput": "~0.5.0",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "ngprogress": "~1.0.7",
+    "material-design-color-palette": "~1.0.1",
+    "Buttons": "~2.0.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

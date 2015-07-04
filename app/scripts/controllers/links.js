@@ -6,6 +6,22 @@ angular.module('owlLinksDashboardApp')
 
             $scope.links = null;
             $scope.link = null;
+            $scope.tags = null;
+
+            $scope.loadTags = function() {
+
+                console.log('Carregando tags...');
+
+                LinksService.getAllTags().
+                    success(function(tags) {
+                        $scope.tags = tags;
+                        console.log('Tags carregadas com sucesso')
+                    })
+                    .error(function(error) {
+                        toastr.error('Falha ao carregar a lista de tags');
+                        console.error(error);
+                    });
+            }
 
             $scope.loadAll = function() {
                 console.log('Carregando links...');

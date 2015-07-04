@@ -26,6 +26,9 @@ module.exports = function(config) {
             'app/vendor/angular-resource/angular-resource.js',
             'app/vendor/angular-ui-router/release/angular-ui-router.js',
             'app/vendor/string-formatter/string-formatter.js',
+            'app/vendor/angular-toastr/dist/angular-toastr.tpls.js',
+            'app/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
+            'app/vendor/ngprogress/build/ngProgress.js',
             'app/vendor/angular-mocks/angular-mocks.js',
             // endbower
             'app/scripts/*.js',
