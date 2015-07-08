@@ -1,7 +1,10 @@
 {
   "name": "owllinksdashboard",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "gzippo": "~0.2.0",
+    "express": "~4.13.1"
+  },
   "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",

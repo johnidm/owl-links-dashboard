@@ -1,0 +1,28 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <hr>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a ui-sref="home"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-home fa-1x"></i> Home</h4></a></li>
+                    <li><a ui-sref="collectlinks"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-tasks fa-1x"></i> Coleção de Links</h4></a></li>
+                    <li><a ui-sref="newsletters"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-envelope"></i> Newsletters</h4></a></li>
+                    <li><a ui-sref="contacts"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-users"></i> Contatos</h4></a></li>
+                    <li><a ui-sref="links"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-list"></i> Links</h4></a></li>
+                </ul>
+                <hr>
+            </div>
+            <div class="col-md-9">
+                <hr>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="mdc-text-blue-grey-900">{{$state.current.data.title}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div ui-view></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

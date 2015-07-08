@@ -6,20 +6,20 @@
     <title>Dashboard Owl Links</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- build:css(.) styles/vendor.css -->
-    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" />
+    <!-- build:css /styles/vendor.css -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
     <link rel="stylesheet" href="vendor/angular-toastr/dist/angular-toastr.css">
-    </script>
     <link rel="stylesheet" href="vendor/ngprogress/ngProgress.css">
-    </script>
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="vendor/material-design-color-palette/css/material-design-color-palette.css" />
-    <link rel="stylesheet" href="vendor/Buttons/css/buttons.css" />
+    <link rel="stylesheet" href="vendor/material-design-color-palette/css/material-design-color-palette.css">
+    <link rel="stylesheet" href="vendor/Buttons/css/buttons.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+
+    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
 </head>
 
 <body ng-app="owlLinksDashboardApp">
@@ -27,69 +27,9 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <loading></loading>
-    <header class="mdc-bg-cyan-600">
-        <div id="top-nav" class="navbar navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-toggle"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle text-white" role="button" data-toggle="dropdown" href="#">
-                                <i class="glyphicon glyphicon-user "></i> Admin <span class="caret"></span></a>
-                            <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                                <li><a href="#">My Profile</a></li>
-                                <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <hr>
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a ui-sref="home"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-home fa-1x"></i> Home</h4></a></li>
-                        <li><a ui-sref="collectlinks"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-tasks fa-1x"></i> Coleção de Links</h4></a></li>
-                        <li><a ui-sref="newsletters"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-envelope"></i> Newsletters</h4></a></li>
-                        <li><a ui-sref="contacts"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-users"></i> Contatos</h4></a></li>
-                        <li><a ui-sref="links"><h4 class="mdc-text-blue-grey-800"><i class="fa fa-list"></i> Links</h4></a></li>
-                    </ul>
-                    <hr>
-                </div>
-                <div class="col-md-9">
-                    <hr>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="mdc-text-blue-grey-900">{{$state.current.data.title}}</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div ui-view></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer-basic-centered">
-        <p class="footer-company-motto">The company motto.</p>
-        <p class="footer-links">
-            <a href="#">Home</a> ·
-            <a href="#">Blog</a> ·
-            <a href="#">Pricing</a> ·
-            <a href="#">About</a> ·
-            <a href="#">Faq</a> ·
-            <a href="#">Contact</a>
-        </p>
-        <p class="footer-company-name">Company Name © 2015</p>
-    </footer>
+    <ng-include src="'views/header.html'"></ng-include>
+    <ng-include src="'views/section.html'"></ng-include>
+    <ng-include src="'views/footer.html'"></ng-include>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
     ! function(A, n, g, u, l, a, r) {
@@ -101,7 +41,7 @@
     ga('create', 'UA-XXXXX-X');
     ga('send', 'pageview');
     </script>
-    <!-- build:js(.) scripts/vendor.js -->
+    <!-- build:js scripts/vendor.js -->
     <script src="vendor/jquery/dist/jquery.js"></script>
     <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
     <script src="vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
@@ -112,7 +52,8 @@
     <script src="vendor/string-formatter/string-formatter.js"></script>
     <script src="vendor/Buttons/js/buttons.js"></script>
     <!-- endbuild -->
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    
+    <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/services/collectlinks.js"></script>
     <script src="scripts/services/newsletters.js"></script>
